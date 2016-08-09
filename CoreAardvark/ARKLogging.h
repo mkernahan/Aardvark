@@ -1,9 +1,9 @@
 //
-//  SampleCrashlyticsLogObserver.h
-//  AardvarkSample
+//  ARKLogging.h
+//  CoreAardvark
 //
-//  Created by Dan Federman on 10/16/14.
-//  Copyright 2014 Square, Inc.
+//  Created by Dan Federman on 7/25/16.
+//  Copyright 2016 Square, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -18,8 +18,11 @@
 //  limitations under the License.
 //
 
-#import <CoreAardvark/ARKLogObserver.h>
+#import <CoreAardvark/ARKLogTypes.h>
 
 
-@interface SampleCrashlyticsLogObserver : NSObject <ARKLogObserver>
-@end
+/// Logs a log with default type to the default log distributor.
+OBJC_EXTERN void ARKLog(NSString * _Nonnull format, ...) NS_FORMAT_FUNCTION(1,2);
+
+/// Logs a log with customized type and userInfo to the default log distributor.
+OBJC_EXTERN void ARKLogWithType(ARKLogType type, NSDictionary * _Nullable userInfo, NSString * _Nonnull format, ...) NS_FORMAT_FUNCTION(3,4);

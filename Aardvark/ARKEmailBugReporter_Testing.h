@@ -1,8 +1,8 @@
 //
-//  SampleCrashlyticsLogObserver.h
-//  AardvarkSample
+//  ARKEmailBugReporter_Testing.h
+//  Aardvark
 //
-//  Created by Dan Federman on 10/16/14.
+//  Created by Dan Federman on 10/20/14.
 //  Copyright 2014 Square, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +18,13 @@
 //  limitations under the License.
 //
 
-#import <CoreAardvark/ARKLogObserver.h>
+#import <Foundation/Foundation.h>
+
+#import <Aardvark/ARKEmailBugReporter.h>
 
 
-@interface SampleCrashlyticsLogObserver : NSObject <ARKLogObserver>
+@interface ARKEmailBugReporter ()
+
+- (nonnull NSString *)_recentErrorLogMessagesAsPlainText:(nonnull NSArray *)logMessages count:(NSUInteger)errorLogsToInclude;
+
 @end

@@ -1,8 +1,8 @@
 //
-//  SampleCrashlyticsLogObserver.h
-//  AardvarkSample
+//  ARKLogObserver.h
+//  CoreAardvark
 //
-//  Created by Dan Federman on 10/16/14.
+//  Created by Dan Federman on 10/8/14.
 //  Copyright 2014 Square, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +18,25 @@
 //  limitations under the License.
 //
 
-#import <CoreAardvark/ARKLogObserver.h>
+#import <Foundation/Foundation.h>
 
 
-@interface SampleCrashlyticsLogObserver : NSObject <ARKLogObserver>
+@class ARKLogDistributor;
+@class ARKLogMessage;
+
+
+NS_ASSUME_NONNULL_BEGIN
+
+
+@protocol ARKLogObserver <NSObject>
+
+/// The log distributor that distributes logs to this observer.
+@property (weak, nullable) ARKLogDistributor *logDistributor;
+
+/// Called on a background operation queue when logs are appended to the log distributor.
+- (void)observeLogMessage:(ARKLogMessage *)logMessage;
+
 @end
+
+
+NS_ASSUME_NONNULL_END

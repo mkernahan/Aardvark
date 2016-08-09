@@ -1,8 +1,8 @@
 //
-//  SampleCrashlyticsLogObserver.h
-//  AardvarkSample
+//  ARKIndividualLogViewController.h
+//  Aardvark
 //
-//  Created by Dan Federman on 10/16/14.
+//  Created by Dan Federman on 10/5/14.
 //  Copyright 2014 Square, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +18,14 @@
 //  limitations under the License.
 //
 
-#import <CoreAardvark/ARKLogObserver.h>
+#import <UIKit/UIKit.h>
 
 
-@interface SampleCrashlyticsLogObserver : NSObject <ARKLogObserver>
+@class ARKLogMessage;
+
+
+@interface ARKIndividualLogViewController : UIViewController
+
+- (nullable instancetype)initWithLogMessage:(nonnull ARKLogMessage *)logMessage;
+
 @end

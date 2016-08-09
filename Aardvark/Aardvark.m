@@ -18,9 +18,11 @@
 //  limitations under the License.
 //
 
+#import <CoreAardvark/AardvarkDefines.h>
+#import <CoreAardvark/ARKLogDistributor.h>
+
 #import "Aardvark.h"
 
-#import "AardvarkDefines.h"
 #import "UIApplication+ARKAdditions.h"
 
 

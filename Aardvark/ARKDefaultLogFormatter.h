@@ -1,8 +1,8 @@
 //
-//  SampleCrashlyticsLogObserver.h
-//  AardvarkSample
+//  ARKLogFormatter.h
+//  Aardvark
 //
-//  Created by Dan Federman on 10/16/14.
+//  Created by Dan Federman on 10/6/14.
 //  Copyright 2014 Square, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +18,17 @@
 //  limitations under the License.
 //
 
-#import <CoreAardvark/ARKLogObserver.h>
+#import <Foundation/Foundation.h>
+
+#import <Aardvark/ARKLogFormatter.h>
 
 
-@interface SampleCrashlyticsLogObserver : NSObject <ARKLogObserver>
+@interface ARKDefaultLogFormatter : NSObject <ARKLogFormatter>
+
+/// The string that is prepended to error logs.
+@property (nullable, nonatomic, copy) NSString *errorLogPrefix;
+
+/// The string that is prepended to separator logs.
+@property (nullable, nonatomic, copy) NSString *separatorLogPrefix;
+
 @end

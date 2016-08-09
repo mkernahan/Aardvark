@@ -1,9 +1,9 @@
 //
-//  SampleCrashlyticsLogObserver.h
-//  AardvarkSample
+//  NSURL+ARKAdditions.h
+//  CoreAardvark
 //
-//  Created by Dan Federman on 10/16/14.
-//  Copyright 2014 Square, Inc.
+//  Created by Peter Westen on 3/17/15.
+//  Copyright 2015 Square, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -18,8 +18,11 @@
 //  limitations under the License.
 //
 
-#import <CoreAardvark/ARKLogObserver.h>
+#import <Foundation/Foundation.h>
 
 
-@interface SampleCrashlyticsLogObserver : NSObject <ARKLogObserver>
+@interface NSURL (ARKAdditions)
+
++ (nullable NSURL *)ARK_fileURLWithApplicationSupportFilename:(nonnull NSString *)filename;
+
 @end

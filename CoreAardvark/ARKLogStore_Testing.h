@@ -1,8 +1,8 @@
 //
-//  SampleCrashlyticsLogObserver.h
-//  AardvarkSample
+//  ARKLogStore_Testing.h
+//  CoreAardvark
 //
-//  Created by Dan Federman on 10/16/14.
+//  Created by Dan Federman on 11/13/14.
 //  Copyright 2014 Square, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +18,11 @@
 //  limitations under the License.
 //
 
-#import <CoreAardvark/ARKLogObserver.h>
+@class ARKDataArchive;
 
 
-@interface SampleCrashlyticsLogObserver : NSObject <ARKLogObserver>
+@interface ARKLogStore (Private)
+
+@property ARKDataArchive *dataArchive;
+
 @end

@@ -1,8 +1,8 @@
 //
-//  SampleCrashlyticsLogObserver.h
-//  AardvarkSample
+//  ARKLogFormatter.h
+//  Aardvark
 //
-//  Created by Dan Federman on 10/16/14.
+//  Created by Dan Federman on 10/6/14.
 //  Copyright 2014 Square, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +18,17 @@
 //  limitations under the License.
 //
 
-#import <CoreAardvark/ARKLogObserver.h>
+#import <Foundation/Foundation.h>
 
 
-@interface SampleCrashlyticsLogObserver : NSObject <ARKLogObserver>
+@class ARKLogMessage;
+
+
+@protocol ARKLogFormatter <NSObject>
+
+@required
+
+/// Return a string that represents the log.
+- (nonnull NSString *)formattedLogMessage:(nonnull ARKLogMessage *)logMessage;
+
 @end

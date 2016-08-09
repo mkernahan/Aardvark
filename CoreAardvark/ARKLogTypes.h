@@ -1,9 +1,9 @@
 //
-//  SampleCrashlyticsLogObserver.h
-//  AardvarkSample
+//  ARKLogTypes.h
+//  CoreAardvark
 //
-//  Created by Dan Federman on 10/16/14.
-//  Copyright 2014 Square, Inc.
+//  Created by Evan Kimia on 10/23/15.
+//  Copyright 2015 Square, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -18,8 +18,16 @@
 //  limitations under the License.
 //
 
-#import <CoreAardvark/ARKLogObserver.h>
+#import <Foundation/Foundation.h>
 
 
-@interface SampleCrashlyticsLogObserver : NSObject <ARKLogObserver>
-@end
+typedef NS_ENUM(NSUInteger, ARKLogType) {
+    /// Default log type.
+    ARKLogTypeDefault,
+    /// Marks the beginning or end of a task.
+    ARKLogTypeSeparator,
+    /// Marks that the log represents an error.
+    ARKLogTypeError,
+    /// Marks a log that has a screenshot attached.
+    ARKLogTypeScreenshot,
+};

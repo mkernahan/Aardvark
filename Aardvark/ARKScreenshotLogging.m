@@ -1,8 +1,8 @@
 //
-//  SampleCrashlyticsLogObserver.h
-//  AardvarkSample
+//  ARKScreenshotLogging.m
+//  Aardvark
 //
-//  Created by Dan Federman on 10/16/14.
+//  Created by Dan Federman on 10/4/14.
 //  Copyright 2014 Square, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +18,14 @@
 //  limitations under the License.
 //
 
-#import <CoreAardvark/ARKLogObserver.h>
+#import <CoreAardvark/CoreAardvark.h>
+
+#import "ARKScreenshotLogging.h"
+
+#import "ARKLogDistributor+UIAdditions.h"
 
 
-@interface SampleCrashlyticsLogObserver : NSObject <ARKLogObserver>
-@end
+void ARKLogScreenshot()
+{
+    [[ARKLogDistributor defaultDistributor] logScreenshot];
+}

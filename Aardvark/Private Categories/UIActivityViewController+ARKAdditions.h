@@ -1,8 +1,8 @@
 //
-//  SampleCrashlyticsLogObserver.h
-//  AardvarkSample
+//  UIActivityViewController+ARKAdditions.h
+//  Aardvark
 //
-//  Created by Dan Federman on 10/16/14.
+//  Created by Dan Federman on 10/5/14.
 //  Copyright 2014 Square, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +18,12 @@
 //  limitations under the License.
 //
 
-#import <CoreAardvark/ARKLogObserver.h>
+#import <UIKit/UIKit.h>
 
 
-@interface SampleCrashlyticsLogObserver : NSObject <ARKLogObserver>
+@interface UIActivityViewController (ARKAdditions)
+
+/// Creates an activity sheet that allows for sharing via AirDrop, email, copying to the pasteboard and printing.
++ (nonnull instancetype)ARK_newAardvarkActivityViewControllerWithItems:(nonnull NSArray *)items;
+
 @end
